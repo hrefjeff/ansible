@@ -1,0 +1,27 @@
+---
+- name: sample_book # optional
+  hosts: [ansible clients] # list of servers or group
+  remote_user: root
+  become: true # privilege escalation
+
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: run httpd
+      service:
+        name: httpd
+        state: started
+    - name: create content
+      copy:
+        content: "welcome"
+        dest: /var/www/html/index.html
+
+  # /etc/ansible/hosts allows you to define the machines you'll be managing
+  # checking syntax: ansible-playbook sample.yml --syntax-check
+  # checking if command can be run: ansible-playbook sample.yml --check
+  # running playbook: ansible-playbook sample.yml
+  # inventory - list of host or grouop of hosts
+  # modules - programs that perform the actual work of the tasks of a play
+  # tasks - set of instructions or a call to ansible playbook
