@@ -19,6 +19,8 @@
         dest: /var/www/html/index.html
 
   # /etc/ansible/hosts allows you to define the machines you'll be managing
+  # example adding:
+  #    54.234.12.4 ansible_user=username-goes-here
   # checking syntax: ansible-playbook sample.yml --syntax-check
   # checking if command can be run: ansible-playbook sample.yml --check
   # running playbook: ansible-playbook sample.yml
