@@ -1,0 +1,8 @@
+---
+- name: Write a text file
+  file:
+    path: "tmp/num1-test-dir/{{ item }}"
+    state: touch
+  with_items:
+    - test01.txt
+    - test02.txt

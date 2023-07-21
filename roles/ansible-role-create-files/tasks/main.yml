@@ -1,0 +1,3 @@
+---
+- name: Write files
+  include_tasks: write-files.yml

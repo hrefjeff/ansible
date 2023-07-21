@@ -5,4 +5,4 @@
   hosts: local
   roles:
     - ansible-role-set-up-directories
-#    - ansible-role-create-files
+    - ansible-role-create-files
