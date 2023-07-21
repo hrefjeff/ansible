@@ -1,0 +1,10 @@
+---
+- name: Create directory structure
+  file:
+    path: "tmp/{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - "{{ dir1 }}"
+    - "{{ dir2 }}"
+    - "{{ dir3 }}"

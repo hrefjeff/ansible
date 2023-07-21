@@ -1,0 +1,8 @@
+---
+# ansible-playbook main.yml
+
+- name: Create Example Directory Structure
+  hosts: local
+  roles:
+    - ansible-role-set-up-directories
+#    - ansible-role-create-files

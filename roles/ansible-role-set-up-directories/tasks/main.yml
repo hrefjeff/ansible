@@ -1,0 +1,6 @@
+---
+- name: Remove old directories
+  include_tasks: remove-old-dirs.yml
+
+- name: Create new directories
+  include_tasks: create-new-dirs.yml
