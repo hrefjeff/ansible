@@ -1,14 +1,13 @@
 ---
-- name: sample_book # optional
+- name: sample_playbook # optional   <- New plays start with -
   hosts: [ansible clients] # list of servers or group
   remote_user: root
   become: true # privilege escalation
-
   tasks:
-    - name: install httpd
-      yum:
-        name: httpd
-        state: latest
+    - name: install httpd # Module Description
+      yum:                # Module Name
+        name: httpd       # Module argument
+        state: latest     # Module argument
     - name: run httpd
       service:
         name: httpd
@@ -17,6 +16,9 @@
       copy:
         content: "welcome"
         dest: /var/www/html/index.html
+
+- name: another play that does nothing
+  hosts: localhost
 
   # /etc/ansible/hosts allows you to define the machines you'll be managing
   # example adding:
